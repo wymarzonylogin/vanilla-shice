@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Vanilla Shice Table</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../table/table.css'>
+</head>
+<body>
+    <h1>Table example</h1>
+    <h2>1994-95 Utah Jazz stats</h2>
+    <div id="my-table"></div>
+    <script src='../../table/table.js'></script>
+    <script>
+        const data = [
+            {
+                firstName: 'Karl',
+                lastName: 'Malone',
+                games: 82,
+                minutesPerGame: 38.1,
+                fieldGoalPctg: 0.536,
+                threePtPctg: 0.268,
+                reboundsPerGame: 10.6,
+                assistsPerGame: 3.5,
+                pointsPerGame: 26.7
+            },
+            {
+                firstName: 'John',
+                lastName: 'Stockton',
+                games: 82,
+                minutesPerGame: 35,
+                fieldGoalPctg: 0.542,
+                threePtPctg: 0.449,
+                reboundsPerGame: 3.1,
+                assistsPerGame: 12.3,
+                pointsPerGame: 14.7
+            },
+            {
+                firstName: 'Jeff',
+                lastName: 'Hornacek',
+                games: 81,
+                minutesPerGame: 33.3,
+                fieldGoalPctg: 0.514,
+                threePtPctg: 0.406,
+                reboundsPerGame: 2.6,
+                assistsPerGame: 4.3,
+                pointsPerGame: 16.5
+            },
+            {
+                firstName: 'Felton',
+                lastName: 'Spencer',
+                games: 34,
+                minutesPerGame: 26.6,
+                fieldGoalPctg: 0.488,
+                threePtPctg: null,
+                reboundsPerGame: 7.6,
+                assistsPerGame: 0.5,
+                pointsPerGame: 9.3
+            },
+            {
+                firstName: 'David',
+                lastName: 'Benoit',
+                games: 71,
+                minutesPerGame: 25.9,
+                fieldGoalPctg: 0.486,
+                threePtPctg: 0.330,
+                reboundsPerGame: 5.2,
+                assistsPerGame: 0.8,
+                pointsPerGame: 10.4
+            },
+            {
+                firstName: 'Antoine',
+                lastName: 'Carr',
+                games: 78,
+                minutesPerGame: 21.5,
+                fieldGoalPctg: 0.531,
+                threePtPctg: 0.250,
+                reboundsPerGame: 3.4,
+                assistsPerGame: 0.9,
+                pointsPerGame: 9.6
+            },
+            {
+                firstName: 'Adam',
+                lastName: 'Keefe',
+                games: 75,
+                minutesPerGame: 16.9,
+                fieldGoalPctg: 0.577,
+                threePtPctg: null,
+                reboundsPerGame: 4.4,
+                assistsPerGame: 0.4,
+                pointsPerGame: 6.1
+            },
+            {
+                firstName: 'Blue',
+                lastName: 'Edwards',
+                games: 36,
+                minutesPerGame: 16.8,
+                fieldGoalPctg: 0.495,
+                threePtPctg: 0.344,
+                reboundsPerGame: 1.8,
+                assistsPerGame: 0.8,
+                pointsPerGame: 6.6
+            },
+        ];
+
+        const options = {
+            columns: {
+                firstName: {
+                    label: 'First name',
+                    type: 'string'
+                },
+                lastName: {
+                    label: 'Last name',
+                    type: 'string'
+                },
+                games: {
+                    label: 'Games',
+                    type: 'number'
+                },
+                minutesPerGame: {
+                    label: 'Minutes / Game',
+                    type: 'number'
+                },
+                fieldGoalPctg: {
+                    label: 'FG%',
+                    type: 'number'
+                },
+                threePtPctg: {
+                    label: '3PT%',
+                    type: 'number'
+                },
+                reboundsPerGame: {
+                    label: 'Rebounds / Game',
+                    type: 'number'
+                },
+                assistsPerGame: {
+                    label: 'Assists / Game',
+                    type: 'number'
+                },
+                pointsPerGame: {    
+                    label: 'Points / Game',
+                    type: 'number'
+                }
+            },
+            paginator: {
+                pageSize: 3
+            },
+            rowClickFn: (d) => {
+                alert(d.firstName + ' ' + d.lastName + ' played in ' + d.games.toString() + ' games');
+            }
+        }
+
+        const myTable = new Table(document.getElementById('my-table'), options, data);
+        myTable.render();
+    </script>
+</body>
+</html>

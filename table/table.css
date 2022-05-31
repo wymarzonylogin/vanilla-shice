@@ -1,0 +1,22 @@
+table.vanilla-shice {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+}
+
+table.vanilla-shice th, table.vanilla-shice td {
+    padding: 1em;
+    border: 1px solid #CCCCCC;
+}
+
+table.vanilla-shice th {
+    cursor: pointer;
+}
+
+table.vanilla-shice th.underline {
+    text-decoration: underline;
+}
+
+table.vanilla-shice th.overline {
+    text-decoration: overline;
+}
